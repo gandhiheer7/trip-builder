@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Builder - Plan Your Adventure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="trip-builder" id="tripBuilder">
+        <div class="container">
+            <h1 class="section-title">Plan Your Adventure</h1>
+            
+            <div class="step">
+                <h3 class="step-title">Step 1: Choose Duration</h3>
+                <div class="duration-buttons">
+                    <button class="duration-btn" data-duration="8">8 hours</button>
+                    <button class="duration-btn" data-duration="10">10 hours</button>
+                    <button class="duration-btn" data-duration="12">12 hours</button>
+                </div>
+            </div>
+
+            <div class="step">
+                <h3 class="step-title">Step 2: Select Date</h3>
+                <input type="date" id="tripDate" class="date-input">
+            </div>
+            
+            <div class="step">
+                <h3 class="step-title">Step 3: Group Details</h3>
+                <div class="group-details-container">
+                    <div class="form-group">
+                        <label for="employeeCount">Number of Employees:</label>
+                        <input type="number" id="employeeCount" class="count-input" value="1" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label>Employee Category:</label>
+                        <div class="radio-group">
+                            <input type="radio" id="cat-standard" name="employeeCategory" value="standard" checked>
+                            <label for="cat-standard">Standard</label>
+                            <input type="radio" id="cat-premium" name="employeeCategory" value="premium">
+                            <label for="cat-premium">Premium</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <h3 class="step-title">Step 4: Choose Activities</h3>
+                <div class="activities-grid">
+                    <div class="category">
+                        <h4 class="category-title">Team Building</h4>
+                        <div class="category-image">
+                            <img src="images/team_building.png" alt="Team Building">
+                        </div>
+                        <div class="activities-list">
+                            <div class="activity-item" data-name="Escape Room" data-duration="2" data-cost="500">
+                                <span class="activity-name">Escape Room</span>
+                                <span class="activity-details">2 hours • ₹500</span>
+                                <button class="add-activity-btn">+</button>
+                            </div>
+                            <div class="activity-item" data-name="Paintball" data-duration="3" data-cost="800">
+                                <span class="activity-name">Paintball</span>
+                                <span class="activity-details">3 hours • ₹800</span>
+                                <button class="add-activity-btn">+</button>
+                            </div>
+                            <div class="activity-item" data-name="Laser Tag" data-duration="1.5" data-cost="400">
+                                <span class="activity-name">Laser Tag</span>
+                                <span class="activity-details">1.5 hours • ₹400</span>
+                                <button class="add-activity-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category">
+                        <h4 class="category-title">Sightseeing</h4>
+                        <div class="category-image">
+                            <img src="images/sightseeing.png" alt="Sightseeing">
+                        </div>
+                        <div class="activities-list">
+                            <div class="activity-item" data-name="City Tour" data-duration="4" data-cost="300">
+                                <span class="activity-name">City Tour</span>
+                                <span class="activity-details">4 hours • ₹300</span>
+                                <button class="add-activity-btn">+</button>
+                            </div>
+                            <div class="activity-item" data-name="Museum Visit" data-duration="2" data-cost="200">
+                                <span class="activity-name">Museum Visit</span>
+                                <span class="activity-details">2 hours • ₹200</span>
+                                <button class="add-activity-btn">+</button>
+                            </div>
+                            <div class="activity-item" data-name="Heritage Walk" data-duration="3" data-cost="150">
+                                <span class="activity-name">Heritage Walk</span>
+                                <span class="activity-details">3 hours • ₹150</span>
+                                <button class="add-activity-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category">
+                        <h4 class="category-title">Meals</h4>
+                        <div class="category-image">
+                            <img src="images/meals.png" alt="Meals">
+                        </div>
+                        <div class="activities-list">
+                            <div class="activity-item" data-name="Fine Dining" data-duration="2" data-cost="1200">
+                                <span class="activity-name">Fine Dining</span>
+                                <span class="activity-details">2 hours • ₹1200</span>
+                                <button class="add-activity-btn">+</button>
+                            </div>
+                            <div class="activity-item" data-name="Street Food Tour" data-duration="1.5" data-cost="300">
+                                <span class="activity-name">Street Food Tour</span>
+                                <span class="activity-details">1.5 hours • ₹300</span>
+                                <button class="add-activity-btn">+</button>
+                            </div>
+                            <div class="activity-item" data-name="Cafe Hopping" data-duration="2.5" data-cost="600">
+                                <span class="activity-name">Cafe Hopping</span>
+                                <span class="activity-details">2.5 hours • ₹600</span>
+                                <button class="add-activity-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category">
+                        <h4 class="category-title">Transport</h4>
+                        <div class="category-image">
+                            <img src="images/transport.png" alt="Transport">
+                        </div>
+                        <div class="activities-list">
+                            <div class="activity-item" data-name="Private Cab" data-duration="0.5" data-cost="200">
+                                <span class="activity-name">Private Cab</span>
+                                <span class="activity-details">0.5 hours • ₹200</span>
+                                <button class="add-activity-btn">+</button>
+                            </div>
+                            <div class="activity-item" data-name="Metro Pass" data-duration="0.25" data-cost="50">
+                                <span class="activity-name">Metro Pass</span>
+                                <span class="activity-details">0.25 hours • ₹50</span>
+                                <button class="add-activity-btn">+</button>
+                            </div>
+                            <div class="activity-item" data-name="Bus Tour" data-duration="1" data-cost="100">
+                                <span class="activity-name">Bus Tour</span>
+                                <span class="activity-details">1 hour • ₹100</span>
+                                <button class="add-activity-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <h3 class="step-title">Step 5: Trip Summary</h3>
+                <div class="summary-panel" id="summaryPanel">
+                    <div class="summary-header">
+                        <h4>Selected Activities</h4>
+                        <div class="summary-stats">
+                            <span class="total-time">Total Time: <span id="totalTime">0</span> hours</span>
+                            <span class="total-cost">Total Cost: ₹<span id="totalCost">0</span></span>
+                        </div>
+                    </div>
+                    <div class="selected-activities" id="selectedActivities">
+                        <p class="empty-message">No activities selected yet. Choose from the categories above!</p>
+                    </div>
+                    
+                    <div class="cost-breakdown" id="costBreakdown">
+                        <h4 class="breakdown-title">Cost Breakdown</h4>
+                        <div class="breakdown-row">
+                            <span>Base Activities Cost</span>
+                            <span id="breakdownBase">₹0</span>
+                        </div>
+                        <div class="breakdown-row" id="multiplierRow">
+                            <span id="multiplierLabel">Premium Surcharge (x1.5)</span>
+                            <span id="breakdownMultiplier">₹0</span>
+                        </div>
+                        <div class="breakdown-row total">
+                            <span>Grand Total</span>
+                            <span id="breakdownTotal">₹0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="warningModal">
+        <div class="modal">
+            <h3>⚠️ Time Limit Exceeded</h3>
+            <p>The total duration of selected activities exceeds your chosen trip duration. Please remove some activities or select a longer duration.</p>
+            <button class="modal-btn" id="closeModal">Got it</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
